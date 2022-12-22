@@ -1,5 +1,4 @@
-import Worker from '../workers/compiler/index.js?worker';
-
+const workerUrl = '../workers/compiler/index.js';
 const workers = new Map();
 
 let uid = 1;
@@ -7,7 +6,9 @@ let uid = 1;
 export default class Compiler {
 	constructor(svelteUrl) {
 		if (!workers.has(svelteUrl)) {
-			const worker = new Worker();
+			const worker = new Worker(new URL(workerUrl, import.meta.url), {
+				type: 'module'
+			});
 			worker.postMessage({ type: 'init', svelteUrl });
 			workers.set(svelteUrl, worker);
 		}

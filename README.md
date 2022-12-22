@@ -15,6 +15,10 @@ This package was created in the following way:
   - "marked": "^4.2.2"
   - "sourcemap-codec": "^1.4.8"
 - modified the css import to the index page
+- fixed "?raw" import for /Output/srcdoc/index.html"
+- fixed "?worker" import for workers
+  - changed eslinrc to "ecmaVersion: 2020"
+  - added constructor syntax
 
 No copyright infingement was intended, if you think I was in the wrong please contact me so I can sort it out.
 
