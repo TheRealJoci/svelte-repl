@@ -35,7 +35,9 @@
 		"yootils": "^0.3.1"
 	},
 	"license": "MIT",
+	"repository": "github:TheRealJoci/svelte-repl",
 	"publishConfig": {
-		"access": "public"
+		"access": "public",
+		"registry": "https://npm.pkg.github.com"
 	}
 }
