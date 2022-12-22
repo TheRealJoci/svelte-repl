@@ -18,7 +18,7 @@ This package was created in the following way:
 - fixed "?raw" import for /Output/srcdoc/index.html"
 - fixed "?worker" import for workers
   - changed eslinrc to "ecmaVersion: 2020"
-  - added constructor syntax
+  - added constructor syntax with type module
 
 No copyright infingement was intended, if you think I was in the wrong please contact me so I can sort it out.
 
