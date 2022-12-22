@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+// just copied the srcdoc/index.html contents to a const
+export const srcdoc = `<!DOCTYPE html>
 <html>
 	<head>
 		<style>
@@ -198,13 +199,13 @@
 						{
 							action: 'console',
 							level: 'system-log',
-							args: [`${label}: ${now - timers.get(label)}ms`]
+							args: [\`\${label}: \${now - timers.get(label)}ms\`]
 						},
 						'*'
 					);
 				} else {
 					parent.postMessage(
-						{ action: 'console', level: 'system-warn', args: [`Timer '${label}' does not exist`] },
+						{ action: 'console', level: 'system-warn', args: [\`Timer '\${label}' does not exist\`] },
 						'*'
 					);
 				}
@@ -217,13 +218,13 @@
 						{
 							action: 'console',
 							level: 'system-log',
-							args: [`${label}: ${now - timers.get(label)}ms`]
+							args: [\`\${label}: \${now - timers.get(label)}ms\`]
 						},
 						'*'
 					);
 				} else {
 					parent.postMessage(
-						{ action: 'console', level: 'system-warn', args: [`Timer '${label}' does not exist`] },
+						{ action: 'console', level: 'system-warn', args: [\`Timer '\${label}' does not exist\`] },
 						'*'
 					);
 				}
@@ -246,7 +247,7 @@
 			console.count = (label = 'default') => {
 				counter.set(label, (counter.get(label) || 0) + 1);
 				parent.postMessage(
-					{ action: 'console', level: 'system-log', args: `${label}: ${counter.get(label)}` },
+					{ action: 'console', level: 'system-log', args: \`\${label}: \${counter.get(label)}\` },
 					'*'
 				);
 				original_count(label);
@@ -260,7 +261,7 @@
 						{
 							action: 'console',
 							level: 'system-warn',
-							args: `Count for '${label}' does not exist`
+							args: \`Count for '\${label}' does not exist\`
 						},
 						'*'
 					);
@@ -287,3 +288,4 @@
 	</head>
 	<body></body>
 </html>
+`;

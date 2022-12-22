@@ -5,7 +5,7 @@
 	import ReplProxy from './ReplProxy.js';
 	import Console from './Console.svelte';
 	import Message from '../Message.svelte';
-	import srcdoc from './srcdoc/index.html?raw';
+	import { srcdoc } from './srcdoc.js';
 	import { browser } from '$app/environment';
 
 	const { bundle } = getContext('REPL');
